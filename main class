@@ -1,0 +1,35 @@
+public class Main  
+{
+  public static int norm180(int a)
+  {
+      while(a<-180)
+      {
+          a+=360;
+        }
+      while(a>180)
+      {
+          a-=360;
+      }
+      return a;
+  }
+  
+  public static int norm360(int a)
+  {
+      while(a<0)
+      {
+          a+=360;
+        }
+      while(a>360)
+      {
+          a-=360;
+      }
+      return a;
+  }
+      
+  public static int getDirection(int queen1,int queen2)
+  {
+     int a=norm180(queen2)-norm180(queen1);
+     int b=norm360(queen2)-norm360(queen1);
+     return Math.abs(a)<Math.abs(b)?a:b;
+  }
+}
