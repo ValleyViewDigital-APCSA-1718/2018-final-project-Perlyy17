@@ -43,6 +43,11 @@ public class Rocket extends Actor
     }
     }
     
+    public static int laser()
+    {
+        return 1;
+    }
+    
     public void fire()
     {
         int dx=(int) (0.5*getImage().getWidth()+20);
@@ -58,6 +63,7 @@ public class Rocket extends Actor
            GreenfootImage img=new GreenfootImage(20,20);
            img.drawImage(getImage(),-Greenfoot.getRandomNumber(getImage().getWidth()),-Greenfoot.getRandomNumber(getImage().getHeight()));
            peachan.setImage(img);
+         
     }
     }
     public void act() 
