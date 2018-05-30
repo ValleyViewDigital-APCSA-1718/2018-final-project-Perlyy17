@@ -78,6 +78,7 @@ public class Robot extends Actor
            Aimx=laqueen.getX();
            Aimy=laqueen.getY();
    }else{
+   //size of robots
        if (jeda==0) {
         Aimx=Greenfoot.getRandomNumber(getWorld().getWidth());
         Aimy=Greenfoot.getRandomNumber(getWorld().getHeight());
