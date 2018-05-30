@@ -1,0 +1,52 @@
+import greenfoot.*; 
+ 
+public class Laser extends Actor
+{
+    public double posx,posy,vx,vy,veloc=9;
+    
+    public Laser()
+    {
+        
+    }
+    
+    public Laser(int rot)
+    {
+        vx=veloc*Math.cos(1.0*rot*Math.PI/180);
+        vy=veloc*Math.sin(1.0*rot*Math.PI/180);
+        setRotation(rot);
+    }
+    
+    public void addedToWorld(World Laucher)
+    {
+        GreenfootImage image=new GreenfootImage(20,10);
+        image.setColor(Color.MAGENTA);
+        image.drawLine(0,5,image.getWidth()-1,5);
+        setImage(image);
+        
+        posx=getX();
+        posy=getY();
+    }
+    
+     public void checkRobot()
+    {
+       Actor rocket=getOneIntersectingObject(Robot.class);
+       if(rocket!=null){
+           ((Robot)rocket).Hancur();
+        }
+    }
+    
+    public void act() 
+    {
+        posx+=vx;
+        posy+=vy;
+        
+        setLocation((int)posx, (int)posy);
+        checkRobot();
+        if(getX()<-100 || getX()>getWorld().getWidth()+100 || getY()<-100 || getY()>getWorld().getHeight()+100)
+        {
+            getWorld().removeObject(this);
+        }
+    }    
+}
+
+ 
