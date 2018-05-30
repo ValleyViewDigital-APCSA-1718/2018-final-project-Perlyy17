@@ -1,0 +1,26 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+public class Laucher extends World
+{
+    private int jeda=2;
+    
+    
+    public Laucher()
+    {    
+        
+        super(1100, 550, 1, false); 
+        addObject(new Rocket(),(int)(0.5*getWidth()),(int)(0.5*getHeight()));
+    }
+    
+    
+    public void act()
+    {
+        if(jeda>0)jeda--;
+        else jeda=200;
+        if(jeda==1)
+        {
+            int rot=Greenfoot.getRandomNumber(360);
+             addObject(new Robot(),(int)(0.5*getWidth()+getWidth()*Math.cos(1.0*rot*Math.PI/180)),(int)(0.5*getHeight()+getWidth()*Math.sin(1.0*rot*Math.PI/180)));
+        }
+    }
+}
