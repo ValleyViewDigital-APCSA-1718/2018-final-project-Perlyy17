@@ -1,7 +1,7 @@
 import greenfoot.*; 
 
+public class Pecahan extends Actor implements queen
 
-public class Pecahan extends Actor
 {
     private double posx,posy,vx,vy;
     private int perl=1,rotate=10;
